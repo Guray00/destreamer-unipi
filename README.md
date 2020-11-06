@@ -138,8 +138,8 @@ To build destreamer clone this repository, install dependencies and run the buil
 
 ```sh
 $ git clone https://github.com/guray00/destreamer-UniPi
-$ cd authentication moduledestreamer-unipi
-$ program's directory
+$ cd ./destreamer-unipi
+$ npm install
 $ npm run build
 ```
 Then create in the program root folder the credentials.txt file with at the first line the username and in the second one the password.
