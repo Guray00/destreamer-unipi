@@ -194,11 +194,6 @@ function isOutputTemplateValid(argv: any): boolean {
             match = elementRegEx.exec(finalTemplate);
         }
     }
-    // bad template from user, switching to default
-    else {
-        logger.warn('Empty output template provided, using default one \n');
-        finalTemplate = '{title} - {publishDate} {uniqueId}';
-    }
 
     argv.outputTemplate = sanitize(finalTemplate.trim());
 
@@ -207,7 +202,7 @@ function isOutputTemplateValid(argv: any): boolean {
 
 
 export function promptUser(choices: Array<string>): number {
-    let index: number = readlineSync.keyInSelect(choices, 'Which resolution/format do you prefer?');
+    const index: number = readlineSync.keyInSelect(choices, 'Which resolution/format do you prefer?');
 
     if (index === -1) {
         process.exit(ERROR_CODE.CANCELLED_USER_INPUT);
